@@ -1,5 +1,5 @@
 tasks:
-  - before: npm i .
+  - before: npm i -g npm && npm i .
     init: npm i -g @zowe/cli
           zowe plugins install @zowe/zos-ftp-for-zowe-cli &&
           zowe plugins install @broadcom/endevor-bridge-for-git-for-zowe-cli &&
