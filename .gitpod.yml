@@ -1,0 +1,27 @@
+tasks:
+  - command: |
+            npm set registry https://registry.npmjs.org &&
+            npm i -g npm &&
+            npm i . &&
+            npm i -g @zowe/cli &&
+            zowe plugins install @zowe/zos-ftp-for-zowe-cli &&
+            zowe plugins install @broadcom/endevor-bridge-for-git-for-zowe-cli &&
+            zowe plugins install @broadcom/endevor-for-zowe-cli &&
+            zowe profiles create zosmf zcobol-zosmf --host $zcobol_hostname --port $zcobol_port --ru false &&
+            zowe profiles create zftp zcobol-zftp --host $zcobol_hostname --port 21 --ru false --secure-ftp false --user $zcobol_username --pass $zcobol_password &&
+            zowe profiles create endevor tso1-endevor --host tso1.lvn.broadcom.net --port 50002 --prot http --base-path /EndevorService/api/v2/ --ru false &&
+            zowe profiles create endevor-location-profile acctpay --env SMPLTEST --sys FINANCE --sub ACCTPAY --sn 1 &&
+            zowe profiles create zosmf apiml --bp api/v1 --dd &&
+            zowe auth login apiml --host usilca32.lvn.broadcom.net --port 60004 --ru true --user $apiml_user --password $apiml_pass
+vscode:
+  extensions:
+    - zowe.vscode-extension-for-zowe
+    - zowe.zowe-explorer-ftp-extensionS
+    - broadcommfd.code4z-extension-pack
+    - eamodio.gitlens
+    - eg2.vscode-npm-script
+    - christian-kohler.npm-intellisense
+    - esbenp.prettier-vscode
+    - visualstudioexptteam.vscodeintellicode
+    - dbaeumer.vscode-eslint
+    - orta.vscode-jest
