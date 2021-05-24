@@ -1,5 +1,5 @@
 tasks:
-  - before: yarn && yarn build
+  - before: npm i . && npm run build
     init: npm i -g @zowe/cli
     command: zowe plugins install @zowe/zos-ftp-for-zowe-cli &&
              zowe plugins install @broadcom/endevor-bridge-for-git-for-zowe-cli &&

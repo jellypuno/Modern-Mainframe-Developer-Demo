@@ -1,0 +1,22 @@
+{
+  "name": "modern-mainframe-developer-demo",
+  "version": "0.0.1",
+  "description": "Modern Mainframe Developer Demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jellypuno/Modern-Mainframe-Developer-Demo.git"
+  },
+  "keywords": [
+    "mainframe"
+  ],
+  "author": "Jessielaine Punongbayan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jellypuno/Modern-Mainframe-Developer-Demo/issues"
+  },
+  "homepage": "https://github.com/jellypuno/Modern-Mainframe-Developer-Demo#readme"
+}
