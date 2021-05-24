@@ -1,5 +1,6 @@
 tasks:
-  - before: npm i -g npm && npm i .
+  - before: npm i -g npm && 
+            npm install --@zowe:registry=https://registry.npmjs.org --no-package-lock --force
     init: npm i -g @zowe/cli
           zowe plugins install @zowe/zos-ftp-for-zowe-cli &&
           zowe plugins install @broadcom/endevor-bridge-for-git-for-zowe-cli &&
