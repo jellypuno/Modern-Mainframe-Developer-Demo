@@ -8,8 +8,8 @@ tasks:
             zowe plugins install @broadcom/endevor-bridge-for-git-for-zowe-cli &&
             zowe plugins install @broadcom/endevor-for-zowe-cli &&
             zowe profiles create zosmf zcobol-zosmf --host $zcobol_hostname --port $zcobol_port --user $zcobol_username --password $zcobol_password --ru false &&
-            zowe profiles create zftp zcobol-zftp --host $zcobol_hostname --port 21 --username $zcobol_username --password $zcobol_password --ru false &&
-            zowe profiles create endevor tso1-endevor --host tso1.lvn.broadcom.net --port 50002 --protocol http --basepath /EndevorService/api/v2/ --ru false &&
+            zowe profiles create zftp zcobol-zftp --host $zcobol_hostname --port 21 --user $zcobol_username --password $zcobol_password --ru false --secure-ftp false &&
+            zowe profiles create endevor tso1-endevor --host tso1.lvn.broadcom.net --port 50002 --prot http --base-path /EndevorService/api/v2/ --ru false &&
             zowe profiles create endevor-location-profile acctpay --env SMPLTEST --sys FINANCE --sub ACCTPAY --sn 1
 vscode:
   extensions:
