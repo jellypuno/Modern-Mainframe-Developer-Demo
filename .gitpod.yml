@@ -1,13 +1,14 @@
 tasks:
-  - before: npm set registry https://registry.npmjs.org &&
+  - command: |
+            npm set registry https://registry.npmjs.org &&
             npm i -g npm &&
-            npm i . 
-    init: npm i -g @zowe/cli
-          zowe plugins install @zowe/zos-ftp-for-zowe-cli &&
-          zowe plugins install @broadcom/endevor-bridge-for-git-for-zowe-cli &&
-          zowe plugins install @broadcom/endevor-for-zowe-cli &&
-          zowe profiles create zosmf zcobol-zosmf --hostname $zcobol_hostname --port $zcobol_port --username $zcobol_username --password $zcobol_password --ru false &&
-          zowe profiles create zftp zcobol-zftp --hostname $zcobol_hostname --port 21 --username $zcobol_username --password $zcobol_password --ru false
+            npm i . &&
+            npm i -g @zowe/cli &&
+            zowe plugins install @zowe/zos-ftp-for-zowe-cli &&
+            zowe plugins install @broadcom/endevor-bridge-for-git-for-zowe-cli &&
+            zowe plugins install @broadcom/endevor-for-zowe-cli &&
+            zowe profiles create zosmf zcobol-zosmf --hostname $zcobol_hostname --port $zcobol_port --username $zcobol_username --password $zcobol_password --ru false &&
+            zowe profiles create zftp zcobol-zftp --hostname $zcobol_hostname --port 21 --username $zcobol_username --password $zcobol_password --ru false
 vscode:
   extensions:
     - zowe.vscode-extension-for-zowe
