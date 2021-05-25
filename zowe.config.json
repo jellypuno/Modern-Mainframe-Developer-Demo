@@ -1,0 +1,79 @@
+{
+    "$schema": "./zowe.schema.json",
+    "profiles": {
+        "lpar1": {
+            "properties": {
+                "host": ""
+            },
+            "profiles": {
+                "zosmf": {
+                    "type": "zosmf",
+                    "properties": {
+                        "port": 443
+                    }
+                },
+                "tso": {
+                    "type": "tso",
+                    "properties": {
+                        "account": "",
+                        "codePage": "1047",
+                        "logonProcedure": "IZUFPROC"
+                    }
+                },
+                "ssh": {
+                    "type": "ssh",
+                    "properties": {
+                        "port": 22
+                    }
+                },
+                "jclcheck": {
+                    "type": "jclcheck",
+                    "properties": {}
+                },
+                "zftp": {
+                    "type": "zftp",
+                    "properties": {}
+                },
+                "db2": {
+                    "type": "db2",
+                    "properties": {}
+                },
+                "ebg": {
+                    "type": "ebg",
+                    "properties": {}
+                },
+                "endevor": {
+                    "type": "endevor",
+                    "properties": {}
+                },
+                "endevor-location": {
+                    "type": "endevor-location",
+                    "properties": {}
+                }
+            }
+        },
+        "my_base": {
+            "type": "base",
+            "properties": {
+                "rejectUnauthorized": true
+            }
+        }
+    },
+    "defaults": {
+        "zosmf": "lpar1.zosmf",
+        "tso": "lpar1.tso",
+        "ssh": "lpar1.ssh",
+        "jclcheck": "lpar1.jclcheck",
+        "zftp": "lpar1.zftp",
+        "db2": "lpar1.db2",
+        "ebg": "lpar1.ebg",
+        "endevor": "lpar1.endevor",
+        "endevor-location": "lpar1.endevor-location",
+        "base": "my_base"
+    },
+    "plugins": [],
+    "secure": [
+        "profiles.my_base.properties.user",
+        "profiles.my_base.properties.password"
+    ]
+}
